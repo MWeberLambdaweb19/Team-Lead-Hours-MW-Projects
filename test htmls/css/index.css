@@ -1,0 +1,46 @@
+/* 
+
+***Rules of the game***
+
+1. You cannot change the values of the variables
+2. You cannot change the HTML
+3. No adding additional color properties
+4. Match the colors with the titles in the boxes
+
+Study the code and re arrange the selectors and variables correctly.
+
+*/
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 800px;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+.container .box {
+  width: 200px;
+  height: 200px;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .box h1 {
+  color: white;
+  font-size: 20px;
+}
+.container .box.box1 {
+  background: red;
+}
+.container .box.box2 {
+  background: purple;
+}
+.container .box.box3 {
+  background: black;
+}
