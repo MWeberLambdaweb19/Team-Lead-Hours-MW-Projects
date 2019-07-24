@@ -16,7 +16,7 @@ const example = {
   "email": "examples@you.edu",
   "gender": "F"
 }
-
+console.log(`The ID of the "example" object is ${example.id}`);
 // Write your intern objects here:
 
 
@@ -24,6 +24,31 @@ const example = {
 // Once your objects are created, log out the following requests from HR into the console:
 
 // Mitzi's name
+
+const Mitzi = {
+  "id": 1,
+  "name": "Mitzi",
+  "email": "mmelloy0@psu.edu",
+  gender: "F",
+  speak: function() {
+    return `Hi, my name is Mitzi!`
+  },
+  speakThis: function() {
+    return `Hi, my name is ${this.name}`
+  },
+  multiplyNums: function(num1,num2) {
+    return num1*num2;
+  },
+  stringCat: function(string1,string2) {
+    return string1+string2;
+  }
+}
+
+console.log(Mitzi.speak());
+console.log(Mitzi.multiplyNums(3,4));
+console.log(Mitzi.speakThis());
+console.log(Mitzi.stringCat("Hello ", "World"))
+
 
 // Kennan's ID
 
