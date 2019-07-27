@@ -78,7 +78,7 @@ let lastCar = () => {
 let carModels = [];
 for (let i = 0; i < inventory.length; i++) {
     carModels.push(inventory[i].car_model);
-}
+};
 //console.log(carModels.sort());
 
 // ==== Challenge 4 ====
@@ -107,18 +107,29 @@ for (let i = 0; i < inventory.length; i++) {
         BMWAndAudi.push(inventory[i].car_make + " " + inventory[i].car_model)
     } else {}
 }
-console.log(JSON.stringify(BMWAndAudi));
+// console.log(JSON.stringify(BMWAndAudi));
 
 // using else if
-let BMWAndAudi = [];
-for (let i = 0; i < inventory.length; i++) {
-    if (inventory[i].car_make === "BMW"){
-        BMWAndAudi.push(inventory[i].car_make + " " + inventory[i].car_model)
-    } else if (inventory[i].car_make === "Audi") {
-        BMWAndAudi.push(inventory[i].car_make + " " + inventory[i].car_model)
-    } else {}
-}
-console.log(JSON.stringify(BMWAndAudi));
-console.log(BMWAndAudi);
+// let BMWAndAudi = [];
+// for (let i = 0; i < inventory.length; i++) {
+//     if (inventory[i].car_make === "BMW"){
+//         BMWAndAudi.push(inventory[i].car_make + " " + inventory[i].car_model)
+//     } else if (inventory[i].car_make === "Audi") {
+//         BMWAndAudi.push(inventory[i].car_make + " " + inventory[i].car_model)
+//     } else {}
+// }
+// console.log(JSON.stringify(BMWAndAudi));
+// console.log(BMWAndAudi);
 
 // console logging both to show that you can have a json string and an array
+
+// For each and every car that has a car make of "Ford", we want to add it to our ford array 
+// Big Boss wants us to show every Ford car in our dealership 
+
+let fordCars = [];
+for (i = 0; i < inventory.length; i++) {
+    if (inventory[i].car_make === "Ford") {
+        fordCars.push(inventory[i])
+    } else {}
+}
+console.log(fordCars);
