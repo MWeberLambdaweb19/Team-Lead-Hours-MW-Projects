@@ -10,10 +10,10 @@ const Person1 = {
   "birth_year": "19BBY",
   "homeworld": "Tatooine",
   "films": [
-    "A New Hope",
-    "The Empire Strikes Back",
-    "Return of the Jedi",
-    "Revenge of the Sith",
+    "A New Hope", // Index: 0, film #: 1
+    "The Empire Strikes Back", // Index: 1, film #: 2
+    "Return of the Jedi", // Index: 2, film #: 3
+    "Revenge of the Sith", // DOESN'T MATTER, FANFIC
     "The Force Awakens"
   ],
   "species": [
@@ -227,34 +227,46 @@ return character.name
 
 // Return the number of films each character is in, by the length of the film array.
 function getFilmCount(character) {
-
+return character.films.length;
 }
 
 
 // Return the first starship from each character's starship array
 // If the length of the array is zero, return "none"
 function getFirstStarshipName(character) {
-
+if (character.starships.length === 0) {
+  return "none"
+} else {
+  return character.starships[0].name
+}
 }
 
 // Return a summary of each character: Template: `{name}, {height}cm, {mass}kg. Featured in {film count} films.`
 function getSummary(character) {
-
+return `${character.name}, ${character.height}cm, ${character.mass}kg. Featured in ${character.films.length} films.`
 }
 
 // Return the total sum of each character's vehicle's cost in credits
 function getVehiclesCostInCreditsSumTotal(character) {
-
+return character.vehicles.reduce((accumulator, vehicles) => {
+  return accumulator + vehicles.cost_in_credits
+}, 0)
 }
 
 // Return the total sum of the character's starship crew and passenger capacity
 function getStarshipPassengerAndCrewSumTotal(character) {
-
+return character.starships.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue.crew + currentValue.passengers
+}, 0)
 }
 
 // Return the film of that character if the film given is between the first film and third film
 function getNthFilm(character, filmNumber) {
-
+if (filmNumber >=1 && filmNumber <= 3) {
+  return character.films[filmNumber -1]
+} else {
+  return "There are only THREE (3) Star Wars films, everything else is fan fiction"
+}
 }
 
 // Console log for Question 1
