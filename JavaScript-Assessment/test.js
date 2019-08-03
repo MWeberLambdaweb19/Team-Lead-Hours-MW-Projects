@@ -220,59 +220,41 @@ const Person3 = {
   "url": "https://swapi.co/api/people/10/"
 }
 
-// ANSWERED BY LAMBDA
 // Return each character's name (THIS IS AN EXAMPLE)
 function getName(character) {
 return character.name
 }
 
-// ANSWERED BY CHINAEMERE
 // Return the number of films each character is in, by the length of the film array.
 function getFilmCount(character) {
-return character.films.length
+
 }
 
-// ANSWERED BY HECTOR
+
 // Return the first starship from each character's starship array
 // If the length of the array is zero, return "none"
 function getFirstStarshipName(character) {
-if (character.starships.length === 0) {
-  return "none"
-} else {
-  return character.starships[0].name 
-}
+
 }
 
-// ANSWERED BY LUIS
 // Return a summary of each character: Template: `{name}, {height}cm, {mass}kg. Featured in {film count} films.`
 function getSummary(character) {
-var sum = `${character.name}, ${character.height}cm, ${character.mass}kg. Featured in ${character.films.length} films.`
-return sum
+
 }
 
-// ANSWERED BY DANIEL
 // Return the total sum of each character's vehicle's cost in credits
 function getVehiclesCostInCreditsSumTotal(character) {
-let sumTotal = character.vehicles.reduce((acc, credits) => {
-  return acc + credits.cost_in_credits;
-}, 0)
-return sumTotal;
+
 }
 
 // Return the total sum of the character's starship crew and passenger capacity
 function getStarshipPassengerAndCrewSumTotal(character) {
-return character.starships.reduce((initialValue, starships) => {
-  return initialValue + starships.crew + starships.passengers;
-}, 0)
+
 }
 
 // Return the film of that character if the film given is between the first film and third film
 function getNthFilm(character, filmNumber) {
-  if (filmNumber >= 1 && filmNumber <= 3) {
-    return character.films[filmNumber -1];
-  } else {
-    return "There are only THREE (3) Star Wars films, everything else is fan fiction"
-  }
+
 }
 
 // Console log for Question 1
