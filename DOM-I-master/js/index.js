@@ -65,23 +65,23 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 const middleImg = document.getElementById("middle-img")
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-const topH4 = document.querySelectorAll(".top-content .text-content h4")
-topH4[0].textContent = siteContent["main-content"]["features-h4"] 
-topH4[1].textContent = siteContent["main-content"]["about-h4"]
+// const topH4 = document.querySelectorAll(".top-content .text-content h4")
+// topH4[0].textContent = siteContent["main-content"]["features-h4"] 
+// topH4[1].textContent = siteContent["main-content"]["about-h4"]
 
-const topContent = document.querySelectorAll(".top-content .text-content p")
-topContent[0].textContent = siteContent["main-content"]["features-content"]
-topContent[1].textContent = siteContent["main-content"]["about-content"]
+// const topContent = document.querySelectorAll(".top-content .text-content p")
+// topContent[0].textContent = siteContent["main-content"]["features-content"]
+// topContent[1].textContent = siteContent["main-content"]["about-content"]
 
-const bottomH4 = document.querySelectorAll(".bottom-content .text-content h4")
-bottomH4[0].textContent = siteContent["main-content"]["services-h4"]
-bottomH4[1].textContent = siteContent["main-content"]["product-h4"]
-bottomH4[2].textContent = siteContent["main-content"]["vision-h4"]
+// const bottomH4 = document.querySelectorAll(".bottom-content .text-content h4")
+// bottomH4[0].textContent = siteContent["main-content"]["services-h4"]
+// bottomH4[1].textContent = siteContent["main-content"]["product-h4"]
+// bottomH4[2].textContent = siteContent["main-content"]["vision-h4"]
 
-const bottomContent = document.querySelectorAll(".bottom-content .text-content p");
-bottomContent[0].textContent = siteContent["main-content"]["services-content"];
-bottomContent[1].textContent = siteContent["main-content"]["product-content"];
-bottomContent[2].textContent = siteContent["main-content"]["vision-content"];
+// const bottomContent = document.querySelectorAll(".bottom-content .text-content p");
+// bottomContent[0].textContent = siteContent["main-content"]["services-content"];
+// bottomContent[1].textContent = siteContent["main-content"]["product-content"];
+// bottomContent[2].textContent = siteContent["main-content"]["vision-content"];
 
 // Updating the contact info
 
@@ -120,3 +120,18 @@ navUpdate.children[0].style.color = "red"
 navUpdate.children[navUpdate.children.length -1].style.color = "red"
 
 console.log(navUpdate.children)
+
+// This is the other way to append data by Karen Li
+
+const newH4 = document.querySelectorAll(".text-content h4")
+const mainContentObj = siteContent["main-content"]
+const arrH4 = Object.keys(mainContentObj).filter(obj => obj.includes("h4")) 
+for (let i=0; i<newH4.length; i++){
+  newH4[i].textContent = siteContent["main-content"][arrH4[i]]
+}
+
+const newP = document.querySelectorAll(".text-content p")
+let arrP = Object.keys(mainContentObj).filter(obj => obj.includes("content"))
+for (let i=0; i<newP.length; i++){
+  newP[i].textContent = siteContent["main-content"][arrP[i]]
+}
