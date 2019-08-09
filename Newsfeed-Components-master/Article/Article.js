@@ -113,3 +113,48 @@ const data = [
 
 */
 
+function createArticle(object) {
+  // elements that need to be created:
+  let articleDiv = document.createElement("div");
+  let articleH2 = document.createElement("h2");
+  let articleDate = document.createElement("p");
+  let paragraph1 = document.createElement("p");
+  let paragraph2 = document.createElement("p");
+  let paragraph3 = document.createElement("p");
+  let buttonExpand = document.createElement("span");
+
+  // elements being appended into order
+  // articleDiv.appendChild(articleH2, articleDate, paragraph1, paragraph2, paragraph3, buttonExpand);
+  articleDiv.appendChild(articleH2);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(paragraph1);
+  articleDiv.appendChild(paragraph2);
+  articleDiv.appendChild(paragraph3);
+  articleDiv.appendChild(buttonExpand);
+
+  // classes being added
+  articleDiv.classList.add("article");
+  articleDate.classList.add("date");
+  buttonExpand.classList.add("expandButton");
+
+  // content being added
+  articleH2.textContent = object.title;
+  articleDate.textContent = object.date;
+  paragraph1.textContent = object.firstParagraph;
+  paragraph2.textContent = object.secondParagraph;
+  paragraph3.textContent = object.thirdParagraph;
+  buttonExpand.textContent = "Read me!";
+
+  // our button is being given an event listener
+  buttonExpand.addEventListener("click", event => {
+    articleDiv.classList.toggle("article-open");
+  })
+
+  return articleDiv;
+}
+
+const articles = document.querySelector(".articles");
+
+data.map(dataObject => {
+  articles.appendChild(createArticle(dataObject))
+})
