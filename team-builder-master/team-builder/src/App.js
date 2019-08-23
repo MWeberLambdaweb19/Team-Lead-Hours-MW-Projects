@@ -11,10 +11,20 @@ function App() {
     setTeammate([...teammate, member])
   }
 
+  // Do this!
+  const updateTeam = person => {
+    setTeammate([...teammate.map(member => person.id === member.id ? person : member)])
+  }
+
+  // Don't do this!
+  // const updateTeam = person => {
+  //   setTeammate([...teammate, person])
+  // }
+
   return (
     <div className="App">
     <Form addTeamMember={addTeamMember}/>
-    <TeamList teammate={teammate} />
+    <TeamList updateTeam={updateTeam} teammate={teammate} />
     </div>
   );
 }

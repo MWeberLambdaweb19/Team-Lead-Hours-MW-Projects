@@ -6,7 +6,7 @@ const TeamList = props => {
         <div>
             {props.teammate.map(member => {
                 return (
-                    <TeamMember key={member.id} member={member} />
+                    <TeamMember updateTeam={props.updateTeam} key={member.id} member={member} />
                 )
             })}
         </div>
