@@ -19,8 +19,9 @@ class App extends React.Component {
   // }
 
   componentDidMount = () => {
+    const localData = JSON.parse(localStorage.getItem("todolist"))
     this.setState({
-      todos: data 
+      todos: localData 
     })
   }
 
@@ -37,6 +38,7 @@ class App extends React.Component {
     this.setState({
       todos: updatedList
     });
+    localStorage.setItem("todolist", JSON.stringify(updatedList));
   };
 
   toggleCompleted = id => {
@@ -46,6 +48,7 @@ class App extends React.Component {
     this.setState({
       todos: TodoById
     })
+    localStorage.setItem("todolist", JSON.stringify(TodoById));
   }
 
   clearCompleted = () => {
@@ -55,6 +58,7 @@ class App extends React.Component {
     this.setState({
       todos: completed
     })
+    localStorage.setItem("todolist", JSON.stringify(completed));
   }
 
   render() {
