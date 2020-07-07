@@ -20,11 +20,11 @@ class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <input 
+                {/* <input 
                 value={this.state.searchInput}
                 name="searchInput"
                 onChange={this.handleSearch}
-                />
+                /> */}
                 <ul>
                 {this.props.todolist.map(
                     item =>
