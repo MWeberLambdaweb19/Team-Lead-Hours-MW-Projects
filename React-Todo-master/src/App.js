@@ -2,6 +2,7 @@ import React from 'react';
 import data from './dummyData.js';
 import TodoList from './components/TodoComponents/TodoList.js';
 import TodoForm from './components/TodoComponents/TodoForm.js';
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -19,9 +20,9 @@ class App extends React.Component {
   // }
 
   componentDidMount = () => {
-    const localData = JSON.parse(localStorage.getItem("todolist"))
+    // const localData = JSON.parse(localStorage.getItem("todolist"))
     this.setState({
-      todos: localData 
+      todos: data 
     })
   }
 
@@ -38,7 +39,7 @@ class App extends React.Component {
     this.setState({
       todos: updatedList
     });
-    localStorage.setItem("todolist", JSON.stringify(updatedList));
+    // localStorage.setItem("todolist", JSON.stringify(updatedList));
   };
 
   toggleCompleted = id => {
@@ -48,7 +49,7 @@ class App extends React.Component {
     this.setState({
       todos: TodoById
     })
-    localStorage.setItem("todolist", JSON.stringify(TodoById));
+    // localStorage.setItem("todolist", JSON.stringify(TodoById));
   }
 
   clearCompleted = () => {
@@ -58,7 +59,7 @@ class App extends React.Component {
     this.setState({
       todos: completed
     })
-    localStorage.setItem("todolist", JSON.stringify(completed));
+    // localStorage.setItem("todolist", JSON.stringify(completed));
   }
 
   render() {
